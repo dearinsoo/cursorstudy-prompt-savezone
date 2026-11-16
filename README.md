@@ -37,18 +37,22 @@ npm run deploy
 
 (PowerShell: `$env:VITE_BASE_PATH='/cursorstudy-prompt-savezone/'` 후 `npm run deploy`)
 
-### 사이트 URL
+### 사이트 URL (이 주소만 사용)
 
 **https://dearinsoo.github.io/cursorstudy-prompt-savezone/**
 
-### 최초 1회 (GitHub 설정)
+- `https://dearinsoo.github.io/` 는 다른 사이트입니다.
+- 저장소 이름은 **소문자** `cursorstudy-prompt-savezone` 입니다.
 
-저장소 [Settings → Pages](https://github.com/dearinsoo/cursorstudy-prompt-savezone/settings/pages)에서:
+### 404가 나올 때
 
-1. **Build and deployment** → Source: **Deploy from a branch**
-2. Branch: **`gh-pages`** / **`/ (root)`** → Save
+1. 위 **전체 URL**(끝 `/` 포함)로 다시 접속해 보세요.
+2. [Settings → Pages](https://github.com/dearinsoo/cursorstudy-prompt-savezone/settings/pages)에서 Source:
+   - **권장**: Branch **`gh-pages`** / **`/ (root)`**
+   - 또는: Branch **`main`** / **`/docs`**
+3. **`main` / `(root)` 만 선택하면 빌드되지 않아 404**가 납니다. 저장 후 1~2분 기다린 뒤 새로고침하세요.
 
-이후에는 `main` 푸시만으로 자동 갱신
+이후에는 `main` 푸시만으로 `gh-pages`와 `docs/`가 자동 갱신
 
 ## 디자인
 

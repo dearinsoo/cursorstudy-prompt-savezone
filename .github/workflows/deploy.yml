@@ -3,6 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "docs/**"
   workflow_dispatch:
 
 permissions:
@@ -30,9 +32,21 @@ jobs:
         env:
           VITE_BASE_PATH: /cursorstudy-prompt-savezone/
 
+      - name: Sync docs folder (Pages source: main /docs)
+        run: |
+          rm -rf docs
+          cp -r dist docs
+
+      - name: Commit docs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update docs for GitHub Pages"
+          file_pattern: docs/**
+
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
           single-commit: true
+          dotfiles: true
