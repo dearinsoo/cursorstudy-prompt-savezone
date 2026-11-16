@@ -28,10 +28,27 @@ npm run build
 
 ## 배포 (GitHub Pages)
 
-`main` 브랜치에 푸시하면 [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml)이 빌드 후 GitHub Pages에 자동 배포합니다.
+`main`에 푸시하면 Actions가 `dist`를 **`gh-pages` 브랜치**로 배포합니다. 로컬에서 수동 배포는:
 
-- 사이트 URL: **https://dearinsoo.github.io/cursorstudy-prompt-savezone/**
-- 저장소 설정 → Pages → Source가 **GitHub Actions**인지 확인하세요(첫 배포 후 자동 설정되는 경우가 많습니다).
+```bash
+set VITE_BASE_PATH=/cursorstudy-prompt-savezone/
+npm run deploy
+```
+
+(PowerShell: `$env:VITE_BASE_PATH='/cursorstudy-prompt-savezone/'` 후 `npm run deploy`)
+
+### 사이트 URL
+
+**https://dearinsoo.github.io/cursorstudy-prompt-savezone/**
+
+### 최초 1회 (GitHub 설정)
+
+저장소 [Settings → Pages](https://github.com/dearinsoo/cursorstudy-prompt-savezone/settings/pages)에서:
+
+1. **Build and deployment** → Source: **Deploy from a branch**
+2. Branch: **`gh-pages`** / **`/ (root)`** → Save
+
+이후에는 `main` 푸시만으로 자동 갱신
 
 ## 디자인
 

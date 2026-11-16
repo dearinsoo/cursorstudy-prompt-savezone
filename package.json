@@ -9,6 +9,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:ci": "tsc && vite build",
+    "deploy": "npm run build:ci && npx gh-pages -d dist -m \"Deploy site\"",
     "preview": "vite preview"
   },
   "devDependencies": {
