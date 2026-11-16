@@ -26,6 +26,13 @@ npm run build
 
 `dist/` 폴더를 정적 호스팅(Vercel, Netlify, GitHub Pages 등)에 올리면 됩니다.
 
+## 배포 (GitHub Pages)
+
+`main` 브랜치에 푸시하면 [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml)이 빌드 후 GitHub Pages에 자동 배포합니다.
+
+- 사이트 URL: **https://dearinsoo.github.io/cursorstudy-prompt-savezone/**
+- 저장소 설정 → Pages → Source가 **GitHub Actions**인지 확인하세요(첫 배포 후 자동 설정되는 경우가 많습니다).
+
 ## 디자인
 
 [desigm.md](./desigm.md)의 토큰과 [src/styles.css](./src/styles.css)를 맞춰 두었습니다. 색·간격을 바꿀 때는 `desigm.md`를 수정한 뒤 CSS 변수를 동일하게 반영하세요.
